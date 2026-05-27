@@ -1,47 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Training Projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase 1 Project Links</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #222222;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 2px solid #dddddd;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #555555;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .day-section {
+      margin-bottom: 28px;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .day-section h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #111111;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 8px;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #222222;
+      background: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    a:hover {
+      background: #222222;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 14px;
+      border-left: 4px solid #222222;
+      background: #f5f5f5;
+      color: #444444;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .day-section {
+        padding: 15px;
+      }
+
+      a {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Phase 1 Project Links</h1>
+    <p class="subtitle">Open all Day 1, Day 2, and Day 3 tasks from one page</p>
 
-    <h1>Frontend Training Projects</h1>
-    <p>Click the links below to open each HTML file.</p>
+    <div class="day-section">
+      <h2>Day 1</h2>
+      <div class="link-list">
+        <a href="Phase 1/Day 1/Hour 1 and Hour 2/index.html">Hour 1 and Hour 2 Task</a>
+        <a href="Phase 1/Day 1/Mini Project/index.html">Mini Project - Portfolio Website</a>
+      </div>
+    </div>
 
-    <h2>Day 1 - 2 HTML Files</h2>
-    <ol>
-        <li>
-            <a href="Phase%201/Day%201/Hour%201%20and%20Hour%202/index.html">
-                Hour 1 and Hour 2 - Basic HTML Page
-            </a>
-        </li>
-        <li>
-            <a href="Phase%201/Day%201/Mini%20Project/index.html">
-                Mini Project - Portfolio Website
-            </a>
-        </li>
-    </ol>
+    <div class="day-section">
+      <h2>Day 2</h2>
+      <div class="link-list">
+        <a href="Phase 1/Day 2/Hour 1/table.html">Hour 1 - Table Task</a>
+        <a href="Phase 1/Day 2/Hour 2/index.html">Hour 2 Task</a>
+        <a href="Phase 1/Day 2/Student Form Hour 3/index.html">Hour 3 - Student Registration Form</a>
+      </div>
+    </div>
 
-    <h2>Day 2 - 3 HTML Files</h2>
-    <ol>
-        <li>
-            <a href="Phase%201/Day%202/Hour%201/table.html">
-                Hour 1 - Table Page
-            </a>
-        </li>
-        <li>
-            <a href="Phase%201/Day%202/Hour%202/index.html">
-                Hour 2 - HTML Page
-            </a>
-        </li>
-        <li>
-            <a href="Phase%201/Day%202/Student%20Form%20Hour%203/index.html">
-                Hour 3 - Student Registration Form
-            </a>
-        </li>
-    </ol>
+    <div class="day-section">
+      <h2>Day 3</h2>
+      <div class="link-list">
+        <a href="Phase 1/Day 3/Hour 1/tags.html">Hour 1 - HTML Tags Task</a>
+        <a href="Phase 1/Day 3/Hour 2/video.html">Hour 2 - Audio and Video Embedding</a>
+        <a href="Phase 1/Day 3/Hour 3 Company Profile Website/index.html">Hour 3 - Company Profile Website</a>
+      </div>
+    </div>
 
+    <div class="note">
+      Keep this <strong>index.html</strong> file in the root folder, at the same level as the <strong>Phase 1</strong> folder.
+    </div>
+  </div>
 </body>
 </html>

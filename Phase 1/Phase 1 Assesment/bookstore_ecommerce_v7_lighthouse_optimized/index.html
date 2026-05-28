@@ -1,1 +1,248 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Bookly Store | Modern Online Bookstore</title><meta name="robots" content="index, follow"><meta name="description" content="Discover fiction, self help, business, technology, children and academic books at Bookly Store."><meta name="keywords" content="online bookstore, books, fiction books, self help books, academic books"><meta property="og:title" content="Bookly Store"><meta property="og:description" content="Discover curated books with a smooth ecommerce shopping experience."><meta property="og:type" content="website"><meta property="og:url" content="https://fastidious-froyo-965961.netlify.app/"><meta property="og:image" content="assets/images/banner-image-bg.webp"><link rel="canonical" href="https://fastidious-froyo-965961.netlify.app/"><link rel="preload" as="image" href="assets/images/banner-image.webp" fetchpriority="high"><link rel="stylesheet" href="assets/css/style.css?v=7"></head><body data-page="home"><a class="skip-link" href="#main" aria-label="Skip to main content">Skip to main content</a><header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="Bookly home"><img src="assets/images/main-logo.png" alt="Bookly" width="160" height="44"></a><nav class="nav-center" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#books">Books</a><a href="index.html#about">About</a><a href="index.html#trust">Why Trust Us</a></nav><div class="nav-actions"><button class="icon-btn" id="searchBtn" aria-label="Open search">⌕</button><span class="nav-icon-wrap"><a class="icon-btn" id="wishIcon" href="wishlist.html" aria-label="Open wishlist">♡</a><span class="nav-badge" id="wishBadge">0</span></span><span class="nav-icon-wrap"><a class="icon-btn" id="cartIcon" href="cart.html" aria-label="Open cart">🛒</a><span class="nav-badge" id="cartBadge">0</span></span><button class="login-btn" id="loginBtn">Login</button><div class="user-chip" id="userChip"><span class="avatar">👤</span><span id="userName"></span></div><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button></div><div class="search-panel" id="searchPanel"><label class="sr-only" for="searchInput">Search books</label><input id="searchInput" placeholder="Search by title, author or category"></div></div><nav class="mobile-nav container" id="mobileNav" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="index.html#books">Books</a><a href="index.html#about">About</a><a href="index.html#trust">Why Trust Us</a></nav></header><main id="main"><section class="hero" aria-label="Featured books carousel"><div class="hero-slider"><div class="slide active"><div class="container hero-grid"><div><span class="eyebrow">Curated Reads</span><h1>Find your next favorite book.</h1><p>Explore fiction, self-help, business, tech and academic books in one calm, reader-friendly store.</p><div class="hero-actions"><a href="#books" class="btn btn-primary">Shop Books</a><a href="product.html" class="btn btn-secondary">View Featured</a></div></div><div class="hero-art"><img src="assets/images/banner-image.webp" alt="Featured books display" width="599" height="648" fetchpriority="high" decoding="async"></div></div></div><div class="slide"><div class="container hero-grid"><div><span class="eyebrow">New Arrivals</span><h1>Fresh titles for focused readers.</h1><p>Practical guides, sharp novels and learning books selected for everyday reading and growth.</p><div class="hero-actions"><a href="#books" class="btn btn-primary">Explore New Books</a></div></div><div class="hero-art"><img src="assets/images/banner-image1.webp" alt="New arrival books" width="599" height="648" loading="lazy" decoding="async"></div></div></div><div class="slide"><div class="container hero-grid"><div><span class="eyebrow">Study & Growth</span><h1>Books that help you build skills.</h1><p>Clear academic and technology titles with useful examples and a smooth shopping flow.</p><div class="hero-actions"><a href="#books" class="btn btn-primary">Browse Books</a></div></div><div class="hero-art"><img src="assets/images/banner-image2.webp" alt="Learning books collection" width="598" height="648" loading="lazy" decoding="async"></div></div></div><div class="hero-zone left"><button class="hero-arrow" id="heroPrev" aria-label="Previous slide">‹</button></div><div class="hero-zone right"><button class="hero-arrow" id="heroNext" aria-label="Next slide">›</button></div><div class="hero-dots"><button class="dot active" aria-label="Slide 1"></button><button class="dot" aria-label="Slide 2"></button><button class="dot" aria-label="Slide 3"></button></div></div></section><section class="section recent-section" id="recentSection"><div class="container"><div class="section-head"><div><h2>Recently Viewed</h2></div></div><div id="recentList" class="horizontal-row"></div></div></section><section class="section" id="books"><div class="container"><div class="section-head"><div><h2>Featured Books</h2><p>Browse reader favorites with cart, wishlist, availability and rating interactions.</p></div></div><div class="products-grid" id="productGrid"></div></div></section><section class="section" id="about"><div class="container info-split"><div class="info-card"><img src="assets/images/main-logo.png" alt="Bookly Store logo"><span class="eyebrow">About Bookly Store</span><h2>Built for simple, focused book shopping.</h2><p>Bookly Store is a clean ecommerce bookstore experience designed for quick discovery, smooth browsing and clear product information.</p></div><div class="info-card"><span class="eyebrow">Reader-first Design</span><h2>Less clutter. Better browsing.</h2><ul class="check-list"><li>Curated selection across key reading categories</li><li>Simple cart and wishlist flow</li><li>Works well on mobile and desktop</li><li>Accessible and keyboard-friendly controls</li></ul></div></div></section><section class="section" id="trust"><div class="container"><div class="section-head"><div><h2>Why Trust Us</h2></div></div><div class="trust-grid"><div class="trust-item"><div class="trust-icon">📦</div><strong>Curated catalogue</strong><p class="muted">Books organized by reader goals and categories.</p></div><div class="trust-item"><div class="trust-icon">🔒</div><strong>Secure checkout flow</strong><p class="muted">Clean cart, price summary and address capture.</p></div><div class="trust-item"><div class="trust-icon">📱</div><strong>Responsive experience</strong><p class="muted">Readable layouts across phone, tablet and desktop.</p></div><div class="trust-item"><div class="trust-icon">♿</div><strong>Accessible interface</strong><p class="muted">Semantic layout, labels and keyboard-friendly controls.</p></div></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><img class="footer-logo" src="assets/images/main-logo.png" alt="Bookly" width="160" height="44"><p>Modern ecommerce bookstore layout built with HTML, CSS and JavaScript.</p></div><div><h4>Shop</h4><p><a href="index.html#books">All Books</a></p><p><a href="wishlist.html">Wishlist</a></p></div><div><h4>Account</h4><p><a href="cart.html">Cart</a></p><p><a href="#" id="footerLogin">Login</a></p></div><div><h4>Project</h4><p>SEO-ready</p><p>Responsive</p></div></div></footer><div class="modal-backdrop" id="loginModal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><button class="close-modal" id="closeLogin" aria-label="Close login">×</button><h2 id="loginTitle">Request OTP</h2><form id="loginForm" class="form-grid"><div class="field"><label for="loginName">Name</label><input id="loginName" required></div><div class="field"><label for="loginMobile">Mobile number</label><input id="loginMobile" type="tel" required minlength="10"></div><button class="btn btn-primary" type="submit">Request OTP</button></form></div></div><div class="toast" id="toast" aria-live="polite"></div><script src="assets/js/script.js?v=7" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly Store | Modern Online Bookstore</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Discover fiction, self help, business, technology, children and academic books at Bookly Store.">
+    <meta name="keywords" content="online bookstore, books, fiction books, self help books, academic books">
+    <meta property="og:title" content="Bookly Store">
+    <meta property="og:description" content="Discover curated books with a smooth ecommerce shopping experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastidious-froyo-965961.netlify.app/">
+    <meta property="og:image" content="assets/images/banner-image-bg.webp">
+    <link rel="canonical" href="https://fastidious-froyo-965961.netlify.app/">
+    <link rel="preload" as="image" href="assets/images/banner-image.webp" fetchpriority="high">
+    <link rel="stylesheet" href="assets/css/style.css?v=7">
+</head>
+<body data-page="home">
+    <a class="skip-link" href="#main" aria-label="Skip to main content">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Bookly home">
+                <img src="assets/images/main-logo.png" alt="Bookly" width="160" height="44">
+            </a>
+            <nav class="nav-center" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#books">Books</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#trust">Why Trust Us</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchBtn" aria-label="Open search">⌕</button>
+                <span class="nav-icon-wrap">
+                    <a class="icon-btn" id="wishIcon" href="wishlist.html" aria-label="Open wishlist">♡</a>
+                    <span class="nav-badge" id="wishBadge">0</span>
+                </span>
+                <span class="nav-icon-wrap">
+                    <a class="icon-btn" id="cartIcon" href="cart.html" aria-label="Open cart">🛒</a>
+                    <span class="nav-badge" id="cartBadge">0</span>
+                </span>
+                <button class="login-btn" id="loginBtn">Login</button>
+                <div class="user-chip" id="userChip">
+                    <span class="avatar">👤</span>
+                    <span id="userName"></span>
+                </div>
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+            </div>
+            <div class="search-panel" id="searchPanel">
+                <label class="sr-only" for="searchInput">Search books</label>
+                <input id="searchInput" placeholder="Search by title, author or category">
+            </div>
+        </div>
+        <nav class="mobile-nav container" id="mobileNav" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#books">Books</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#trust">Why Trust Us</a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero" aria-label="Featured books carousel">
+            <div class="hero-slider">
+                <div class="slide active">
+                    <div class="container hero-grid">
+                        <div>
+                            <span class="eyebrow">Curated Reads</span>
+                            <h1>Find your next favorite book.</h1>
+                            <p>Explore fiction, self-help, business, tech and academic books in one calm, reader-friendly store.</p>
+                            <div class="hero-actions">
+                                <a href="#books" class="btn btn-primary">Shop Books</a>
+                                <a href="product.html" class="btn btn-secondary">View Featured</a>
+                            </div>
+                        </div>
+                        <div class="hero-art">
+                            <img src="assets/images/banner-image.webp" alt="Featured books display" width="599" height="648" fetchpriority="high" decoding="async">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container hero-grid">
+                        <div>
+                            <span class="eyebrow">New Arrivals</span>
+                            <h1>Fresh titles for focused readers.</h1>
+                            <p>Practical guides, sharp novels and learning books selected for everyday reading and growth.</p>
+                            <div class="hero-actions">
+                                <a href="#books" class="btn btn-primary">Explore New Books</a>
+                            </div>
+                        </div>
+                        <div class="hero-art">
+                            <img src="assets/images/banner-image1.webp" alt="New arrival books" width="599" height="648" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container hero-grid">
+                        <div>
+                            <span class="eyebrow">Study & Growth</span>
+                            <h1>Books that help you build skills.</h1>
+                            <p>Clear academic and technology titles with useful examples and a smooth shopping flow.</p>
+                            <div class="hero-actions">
+                                <a href="#books" class="btn btn-primary">Browse Books</a>
+                            </div>
+                        </div>
+                        <div class="hero-art">
+                            <img src="assets/images/banner-image2.webp" alt="Learning books collection" width="598" height="648" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-zone left">
+                    <button class="hero-arrow" id="heroPrev" aria-label="Previous slide">‹</button>
+                </div>
+                <div class="hero-zone right">
+                    <button class="hero-arrow" id="heroNext" aria-label="Next slide">›</button>
+                </div>
+                <div class="hero-dots">
+                    <button class="dot active" aria-label="Slide 1"></button>
+                    <button class="dot" aria-label="Slide 2"></button>
+                    <button class="dot" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section recent-section" id="recentSection">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h2>Recently Viewed</h2>
+                    </div>
+                </div>
+                <div id="recentList" class="horizontal-row"></div>
+            </div>
+        </section>
+
+        <section class="section" id="books">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h2>Featured Books</h2>
+                        <p>Browse reader favorites with cart, wishlist, availability and rating interactions.</p>
+                    </div>
+                </div>
+                <div class="products-grid" id="productGrid"></div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container info-split">
+                <div class="info-card">
+                    <img src="assets/images/main-logo.png" alt="Bookly Store logo">
+                    <span class="eyebrow">About Bookly Store</span>
+                    <h2>Built for simple, focused book shopping.</h2>
+                    <p>Bookly Store is a clean ecommerce bookstore experience designed for quick discovery, smooth browsing and clear product information.</p>
+                </div>
+                <div class="info-card">
+                    <span class="eyebrow">Reader-first Design</span>
+                    <h2>Less clutter. Better browsing.</h2>
+                    <ul class="check-list">
+                        <li>Curated selection across key reading categories</li>
+                        <li>Simple cart and wishlist flow</li>
+                        <li>Works well on mobile and desktop</li>
+                        <li>Accessible and keyboard-friendly controls</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="trust">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h2>Why Trust Us</h2>
+                    </div>
+                </div>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">📦</div>
+                        <strong>Curated catalogue</strong>
+                        <p class="muted">Books organized by reader goals and categories.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <strong>Secure checkout flow</strong>
+                        <p class="muted">Clean cart, price summary and address capture.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">📱</div>
+                        <strong>Responsive experience</strong>
+                        <p class="muted">Readable layouts across phone, tablet and desktop.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">♿</div>
+                        <strong>Accessible interface</strong>
+                        <p class="muted">Semantic layout, labels and keyboard-friendly controls.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img class="footer-logo" src="assets/images/main-logo.png" alt="Bookly" width="160" height="44">
+                <p>Modern ecommerce bookstore layout built with HTML, CSS and JavaScript.</p>
+            </div>
+            <div>
+                <h4>Shop</h4>
+                <p><a href="index.html#books">All Books</a></p>
+                <p><a href="wishlist.html">Wishlist</a></p>
+            </div>
+            <div>
+                <h4>Account</h4>
+                <p><a href="cart.html">Cart</a></p>
+                <p><a href="#" id="footerLogin">Login</a></p>
+            </div>
+            <div>
+                <h4>Project</h4>
+                <p>SEO-ready</p>
+                <p>Responsive</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="loginModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <button class="close-modal" id="closeLogin" aria-label="Close login">×</button>
+            <h2 id="loginTitle">Request OTP</h2>
+            <form id="loginForm" class="form-grid">
+                <div class="field">
+                    <label for="loginName">Name</label>
+                    <input id="loginName" required>
+                </div>
+                <div class="field">
+                    <label for="loginMobile">Mobile number</label>
+                    <input id="loginMobile" type="tel" required minlength="10">
+                </div>
+                <button class="btn btn-primary" type="submit">Request OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <script src="assets/js/script.js?v=7" defer></script>
+</body>
+</html>

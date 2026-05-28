@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fastidious-froyo-965961.netlify.app/sitemap.xml

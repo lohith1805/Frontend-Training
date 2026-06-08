@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexaFlow — SaaS Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <span class="brand-mark">N</span>
+      <span class="brand-name">NexaFlow</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact-section">Contact</a></li>
+      </ul>
+      <div class="d-flex gap-2 align-items-center">
+        <a href="#" class="btn btn-ghost-nav">Sign In</a>
+        <a href="#" class="btn btn-cta-nav" data-bs-toggle="modal" data-bs-target="#contactModal">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO CAROUSEL ===================== -->
+<section id="hero">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active hero-slide slide-1">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center text-white">
+          <span class="hero-tag">🚀 New: AI-Powered Workflows</span>
+          <h1 class="hero-title">Automate Everything.<br/>Scale Without Limits.</h1>
+          <p class="hero-sub">NexaFlow connects your tools, teams, and data into one intelligent workspace — so you can focus on what actually matters.</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+            <a href="#" class="btn btn-hero-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Start Free Trial</a>
+            <a href="#features" class="btn btn-hero-ghost">See How It Works <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+          <div class="hero-stats d-flex gap-4 justify-content-center mt-5 flex-wrap">
+            <div class="hero-stat"><span class="hs-num">10K+</span><span class="hs-label">Teams</span></div>
+            <div class="hero-stat"><span class="hs-num">99.9%</span><span class="hs-label">Uptime</span></div>
+            <div class="hero-stat"><span class="hs-num">4.9★</span><span class="hs-label">Rating</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item hero-slide slide-2">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center text-white">
+          <span class="hero-tag">💡 Real-Time Analytics</span>
+          <h1 class="hero-title">Insights That Drive<br/>Real Decisions.</h1>
+          <p class="hero-sub">Visualize performance metrics, user behavior, and revenue trends — all in a single, live dashboard updated every second.</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+            <a href="#" class="btn btn-hero-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Explore Dashboard</a>
+            <a href="#pricing" class="btn btn-hero-ghost">View Pricing <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item hero-slide slide-3">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center text-white">
+          <span class="hero-tag">🔐 Enterprise Security</span>
+          <h1 class="hero-title">Built for Teams<br/>That Can't Afford Risk.</h1>
+          <p class="hero-sub">SOC 2 Type II certified with end-to-end encryption, RBAC, SSO, and 24/7 dedicated support — because your data is non-negotiable.</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+            <a href="#" class="btn btn-hero-primary">Talk to Sales</a>
+            <a href="#testimonials" class="btn btn-hero-ghost">Read Reviews <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ===================== LOGO BAR ===================== -->
+<section class="logo-bar py-4">
+  <div class="container text-center">
+    <p class="logo-bar-label mb-3">Trusted by teams at</p>
+    <div class="d-flex gap-4 gap-md-5 justify-content-center flex-wrap align-items-center">
+      <span class="logo-pill">Notion</span>
+      <span class="logo-pill">Figma</span>
+      <span class="logo-pill">Stripe</span>
+      <span class="logo-pill">Vercel</span>
+      <span class="logo-pill">Linear</span>
+      <span class="logo-pill">GitHub</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section id="features" class="py-6">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-chip">Features</span>
+      <h2 class="section-heading mt-2">Everything Your Team Needs</h2>
+      <p class="section-sub">Powerful tools designed to eliminate friction and supercharge your workflow.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="feat-card">
+          <div class="feat-icon" style="background: linear-gradient(135deg,#4f7cff,#7b61ff)">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+          <h5 class="feat-title">Instant Automation</h5>
+          <p class="feat-desc">Build no-code workflows in minutes with drag-and-drop triggers and 200+ integrations ready out of the box.</p>
+          <a href="#" class="feat-link">Learn more <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="feat-card">
+          <div class="feat-icon" style="background: linear-gradient(135deg,#43d9a2,#20b6e8)">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h5 class="feat-title">Live Analytics</h5>
+          <p class="feat-desc">Track every metric in real time. Custom dashboards with filters, cohort analysis, and one-click exports.</p>
+          <a href="#" class="feat-link">Learn more <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="feat-card">
+          <div class="feat-icon" style="background: linear-gradient(135deg,#ff6b6b,#ff8e53)">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h5 class="feat-title">Enterprise Security</h5>
+          <p class="feat-desc">SOC 2 certified. AES-256 encryption, SSO, RBAC, and a 99.9% SLA uptime guarantee across all plans.</p>
+          <a href="#" class="feat-link">Learn more <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="feat-card">
+          <div class="feat-icon" style="background: linear-gradient(135deg,#f7c948,#f8a148)">
+            <i class="bi bi-people"></i>
+          </div>
+          <h5 class="feat-title">Team Collaboration</h5>
+          <p class="feat-desc">Shared workspaces, threaded comments, live cursors, and granular permission controls for every role.</p>
+          <a href="#" class="feat-link">Learn more <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="feat-card">
+          <div class="feat-icon" style="background: linear-gradient(135deg,#8b5cf6,#ec4899)">
+            <i class="bi bi-cpu"></i>
+          </div>
+          <h5 class="feat-title">AI Copilot</h5>
+          <p class="feat-desc">Let AI write your workflows, summarize reports, draft messages, and surface anomalies before they escalate.</p>
+          <a href="#" class="feat-link">Learn more <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="feat-card">
+          <div class="feat-icon" style="background: linear-gradient(135deg,#20b6e8,#43d9a2)">
+            <i class="bi bi-plug"></i>
+          </div>
+          <h5 class="feat-title">200+ Integrations</h5>
+          <p class="feat-desc">Connect Slack, Salesforce, HubSpot, Jira, GitHub, Google Workspace, and more — in one click.</p>
+          <a href="#" class="feat-link">Learn more <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section id="pricing" class="py-6 pricing-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-chip">Pricing</span>
+      <h2 class="section-heading mt-2">Simple, Transparent Plans</h2>
+      <p class="section-sub">No hidden fees. Cancel anytime. Start free.</p>
+      <!-- Toggle -->
+      <div class="pricing-toggle d-inline-flex align-items-center gap-2 mt-3">
+        <span class="toggle-label" id="lblMonthly">Monthly</span>
+        <div class="form-check form-switch mb-0">
+          <input class="form-check-input" type="checkbox" id="billingToggle"/>
+        </div>
+        <span class="toggle-label" id="lblAnnual">Annual <span class="save-badge">Save 20%</span></span>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <!-- Starter -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pricing-card">
+          <div class="plan-badge">Starter</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" data-monthly="0" data-annual="0">0</span>
+            <span class="period">/mo</span>
+          </div>
+          <p class="plan-sub">Perfect for solo builders getting started.</p>
+          <ul class="plan-features">
+            <li><i class="bi bi-check-circle-fill"></i> 3 Workspaces</li>
+            <li><i class="bi bi-check-circle-fill"></i> 5 Automations</li>
+            <li><i class="bi bi-check-circle-fill"></i> 1GB Storage</li>
+            <li><i class="bi bi-check-circle-fill"></i> Community Support</li>
+            <li class="disabled"><i class="bi bi-x-circle-fill"></i> AI Copilot</li>
+            <li class="disabled"><i class="bi bi-x-circle-fill"></i> Advanced Analytics</li>
+          </ul>
+          <a href="#" class="btn btn-plan-outline w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">Get Started Free</a>
+        </div>
+      </div>
+      <!-- Pro (Popular) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pricing-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <div class="plan-badge">Pro</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" data-monthly="29" data-annual="23">29</span>
+            <span class="period">/mo</span>
+          </div>
+          <p class="plan-sub">For growing teams that need power + flexibility.</p>
+          <ul class="plan-features">
+            <li><i class="bi bi-check-circle-fill"></i> Unlimited Workspaces</li>
+            <li><i class="bi bi-check-circle-fill"></i> 100 Automations</li>
+            <li><i class="bi bi-check-circle-fill"></i> 50GB Storage</li>
+            <li><i class="bi bi-check-circle-fill"></i> Priority Support</li>
+            <li><i class="bi bi-check-circle-fill"></i> AI Copilot</li>
+            <li><i class="bi bi-check-circle-fill"></i> Advanced Analytics</li>
+          </ul>
+          <a href="#" class="btn btn-plan-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">Start Pro Trial</a>
+        </div>
+      </div>
+      <!-- Enterprise -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pricing-card">
+          <div class="plan-badge">Enterprise</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount" data-monthly="99" data-annual="79">99</span>
+            <span class="period">/mo</span>
+          </div>
+          <p class="plan-sub">For large organizations with custom needs.</p>
+          <ul class="plan-features">
+            <li><i class="bi bi-check-circle-fill"></i> Everything in Pro</li>
+            <li><i class="bi bi-check-circle-fill"></i> Unlimited Automations</li>
+            <li><i class="bi bi-check-circle-fill"></i> 1TB Storage</li>
+            <li><i class="bi bi-check-circle-fill"></i> 24/7 Dedicated Support</li>
+            <li><i class="bi bi-check-circle-fill"></i> SSO + SAML</li>
+            <li><i class="bi bi-check-circle-fill"></i> Custom SLA</li>
+          </ul>
+          <a href="#" class="btn btn-plan-outline w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS CAROUSEL ===================== -->
+<section id="testimonials" class="py-6">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-chip">Testimonials</span>
+      <h2 class="section-heading mt-2">Loved by 10,000+ Teams</h2>
+      <p class="section-sub">Don't just take our word for it — hear from the people who use NexaFlow every day.</p>
+    </div>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+        <!-- Group 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"NexaFlow cut our onboarding time by 60%. The automation builder is genuinely the best I've used — and I've tried them all."</p>
+                <div class="testi-author d-flex align-items-center gap-3 mt-3">
+                  <div class="testi-avatar" style="background:linear-gradient(135deg,#4f7cff,#7b61ff)">SC</div>
+                  <div>
+                    <div class="testi-name">Sarah Chen</div>
+                    <div class="testi-role">Head of Ops · Notion</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-none d-md-block">
+              <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"We replaced 4 different tools with NexaFlow. Our team saves 12 hours a week. The analytics dashboard alone is worth every penny."</p>
+                <div class="testi-author d-flex align-items-center gap-3 mt-3">
+                  <div class="testi-avatar" style="background:linear-gradient(135deg,#43d9a2,#20b6e8)">MR</div>
+                  <div>
+                    <div class="testi-name">Marcus Reid</div>
+                    <div class="testi-role">CTO · Fintech Startup</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+              <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"Security was our biggest concern. SOC 2 cert + dedicated support sold us instantly. Migration took one afternoon. Incredible."</p>
+                <div class="testi-author d-flex align-items-center gap-3 mt-3">
+                  <div class="testi-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ff8e53)">AP</div>
+                  <div>
+                    <div class="testi-name">Anika Patel</div>
+                    <div class="testi-role">CISO · HealthTech Corp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Group 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"The AI Copilot is a game-changer. It surfaced a billing anomaly we'd missed for weeks. Paid for itself on day one."</p>
+                <div class="testi-author d-flex align-items-center gap-3 mt-3">
+                  <div class="testi-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">JL</div>
+                  <div>
+                    <div class="testi-name">James Liu</div>
+                    <div class="testi-role">CFO · E-commerce Brand</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-none d-md-block">
+              <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"Setup was incredibly fast. We had our first automation live in under 30 minutes. The template library is excellent too."</p>
+                <div class="testi-author d-flex align-items-center gap-3 mt-3">
+                  <div class="testi-avatar" style="background:linear-gradient(135deg,#f7c948,#f8a148)">LM</div>
+                  <div>
+                    <div class="testi-name">Layla Mansour</div>
+                    <div class="testi-role">Product Lead · SaaS Agency</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+              <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote">"Customer support is phenomenal. Got a reply in 4 minutes at 2am. That level of dedication is rare and appreciated."</p>
+                <div class="testi-author d-flex align-items-center gap-3 mt-3">
+                  <div class="testi-avatar" style="background:linear-gradient(135deg,#20b6e8,#43d9a2)">DK</div>
+                  <div>
+                    <div class="testi-name">Dev Kumar</div>
+                    <div class="testi-role">Founder · DevTools Startup</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center gap-2 mt-4">
+        <button class="btn btn-testi-ctrl" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button class="btn btn-testi-ctrl" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BANNER ===================== -->
+<section id="contact-section" class="cta-banner py-6">
+  <div class="container text-center">
+    <h2 class="cta-title">Ready to Transform<br/>How Your Team Works?</h2>
+    <p class="cta-sub">Join 10,000+ teams already on NexaFlow. No credit card required.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+      <a href="#" class="btn btn-cta-white" data-bs-toggle="modal" data-bs-target="#contactModal">
+        <i class="bi bi-envelope me-2"></i>Get in Touch
+      </a>
+      <a href="#pricing" class="btn btn-cta-outline">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT MODAL ===================== -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header border-0 pb-0">
+        <div>
+          <h4 class="modal-title-custom" id="contactModalLabel">Let's Talk</h4>
+          <p class="modal-sub-custom">Fill in your details and we'll be in touch within 24 hours.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body pt-3">
+        <form id="contactForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label-custom">Full Name</label>
+              <input type="text" class="form-control form-control-custom" placeholder="Your full name" required/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Work Email</label>
+              <input type="email" class="form-control form-control-custom" placeholder="you@company.com" required/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Company</label>
+              <input type="text" class="form-control form-control-custom" placeholder="Your company name"/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Team Size</label>
+              <select class="form-select form-control-custom">
+                <option>1–10</option>
+                <option>11–50</option>
+                <option>51–200</option>
+                <option>200+</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Interested In</label>
+              <select class="form-select form-control-custom">
+                <option>Starter (Free)</option>
+                <option>Pro ($29/mo)</option>
+                <option>Enterprise ($99/mo)</option>
+                <option>Custom Quote</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-custom">Phone (Optional)</label>
+              <input type="tel" class="form-control form-control-custom" placeholder="+91 XXXXX XXXXX"/>
+            </div>
+            <div class="col-12">
+              <label class="form-label-custom">Message</label>
+              <textarea class="form-control form-control-custom" rows="3" placeholder="Tell us about your use case or any questions..."></textarea>
+            </div>
+            <div class="col-12 d-flex gap-3 justify-content-end pt-2">
+              <button type="button" class="btn btn-modal-cancel" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-modal-submit" id="modalSubmitBtn">
+                <i class="bi bi-send me-2"></i>Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer-section py-5">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="brand-mark">N</span>
+          <span class="brand-name text-white">NexaFlow</span>
+        </div>
+        <p class="footer-desc">The intelligent workspace for modern teams. Automate, collaborate, and grow — all in one place.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-github"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Product</h6>
+        <ul class="footer-links">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Company</h6>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Support</h6>
+        <ul class="footer-links">
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="footer-heading">Legal</h6>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="d-flex justify-content-between flex-wrap gap-3 align-items-center">
+      <p class="footer-copy mb-0">&copy; 2025 NexaFlow Inc. All rights reserved.</p>
+      <p class="footer-copy mb-0">Phase 3 · Day 3 Bootstrap Assignment</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

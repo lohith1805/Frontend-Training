@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Table | EmpManager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-icon"><i class="bi bi-grid-1x2-fill"></i></span><span>EmpManager</span></a>
+      <div class="sidebar-label">Main Menu</div>
+      <a class="sidebar-link " href="index.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+      <a class="sidebar-link " href="registration.html"><i class="bi bi-person-plus"></i><span>Add Employee</span></a>
+      <a class="sidebar-link " href="profiles.html"><i class="bi bi-person-badge"></i><span>Employee Profiles</span></a>
+      <a class="sidebar-link active" href="employees.html"><i class="bi bi-table"></i><span>Employee Table</span></a>
+      <a class="sidebar-link " href="analytics.html"><i class="bi bi-bar-chart-line"></i><span>Analytics</span></a>
+    </aside>
+    <div class="sidebar-backdrop"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="menu-btn" type="button"><i class="bi bi-list fs-4"></i></button>
+          <div>
+            <h1 class="page-title">Employee Table</h1>
+            <p class="page-subtitle">Employee records with search, filters, actions, and Add Employee routing.</p>
+          </div>
+        </div>
+        <div class="d-none d-md-flex align-items-center gap-3">
+          <span class="small-muted">Admin</span>
+          <div class="table-avatar">AD</div>
+        </div>
+      </header>
+      <section class="content-wrapper">
+        <div class="card-panel mb-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-lg-5">
+      <div class="search-wrapper">
+        <i class="bi bi-search search-icon"></i>
+        <input id="tableSearch" type="text" class="form-control custom-search" placeholder="Search by name, role, department, or email" />
+      </div>
+    </div>
+    <div class="col-sm-4 col-lg-2">
+      <select id="tableDept" class="form-select custom-input">
+        <option value="">All Departments</option><option>Engineering</option><option>Design</option><option>Marketing</option><option>Finance</option><option>HR</option>
+      </select>
+    </div>
+    <div class="col-sm-4 col-lg-2">
+      <select id="tableStatus" class="form-select custom-input">
+        <option value="">All Status</option><option>Active</option><option>Inactive</option>
+      </select>
+    </div>
+    <div class="col-sm-4 col-lg-2">
+      <select id="tableType" class="form-select custom-input">
+        <option value="">All Types</option><option>Full-time</option><option>Part-time</option><option>Contract</option>
+      </select>
+    </div>
+    <div class="col-lg-1 d-grid">
+      <a href="registration.html" class="btn btn-primary-custom"><i class="bi bi-plus-lg"></i></a>
+    </div>
+  </div>
+</div><div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+  <h2 class="panel-title mb-0">Employee Records</h2>
+  <a href="registration.html" class="btn btn-primary-custom px-4"><i class="bi bi-person-plus me-2"></i>Add Employee</a>
+</div>
+<div class="table-card"><div class="table-responsive"><table class="table mb-0"><thead><tr><th><input id="selectAll" class="form-check-input" type="checkbox"></th><th>ID</th><th>Employee</th><th>Role</th><th>Department</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead><tbody><tr data-employee-row data-email="arjun@company.com">
+<td><input class="form-check-input row-check" type="checkbox"></td><td>EMP-1001</td><td><div class="d-flex align-items-center gap-2"><div class="table-avatar">AS</div><div><strong>Arjun Sharma</strong><br><span class="small-muted">arjun@company.com</span></div></div></td><td>Frontend Developer</td><td>Engineering</td><td>Full-time</td><td><span class="badge-status active">Active</span></td><td><div class="d-flex gap-2"><button class="btn btn-sm btn-action-view"><i class="bi bi-eye"></i></button><button class="btn btn-sm btn-action-edit"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-action-del"><i class="bi bi-trash"></i></button></div></td>
+</tr><tr data-employee-row data-email="priya@company.com">
+<td><input class="form-check-input row-check" type="checkbox"></td><td>EMP-1002</td><td><div class="d-flex align-items-center gap-2"><div class="table-avatar">PP</div><div><strong>Priya Patel</strong><br><span class="small-muted">priya@company.com</span></div></div></td><td>UI/UX Designer</td><td>Design</td><td>Full-time</td><td><span class="badge-status active">Active</span></td><td><div class="d-flex gap-2"><button class="btn btn-sm btn-action-view"><i class="bi bi-eye"></i></button><button class="btn btn-sm btn-action-edit"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-action-del"><i class="bi bi-trash"></i></button></div></td>
+</tr><tr data-employee-row data-email="rahul@company.com">
+<td><input class="form-check-input row-check" type="checkbox"></td><td>EMP-1003</td><td><div class="d-flex align-items-center gap-2"><div class="table-avatar">RK</div><div><strong>Rahul Kumar</strong><br><span class="small-muted">rahul@company.com</span></div></div></td><td>Backend Engineer</td><td>Engineering</td><td>Contract</td><td><span class="badge-status inactive">Inactive</span></td><td><div class="d-flex gap-2"><button class="btn btn-sm btn-action-view"><i class="bi bi-eye"></i></button><button class="btn btn-sm btn-action-edit"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-action-del"><i class="bi bi-trash"></i></button></div></td>
+</tr><tr data-employee-row data-email="sneha@company.com">
+<td><input class="form-check-input row-check" type="checkbox"></td><td>EMP-1004</td><td><div class="d-flex align-items-center gap-2"><div class="table-avatar">SR</div><div><strong>Sneha Reddy</strong><br><span class="small-muted">sneha@company.com</span></div></div></td><td>Marketing Lead</td><td>Marketing</td><td>Full-time</td><td><span class="badge-status active">Active</span></td><td><div class="d-flex gap-2"><button class="btn btn-sm btn-action-view"><i class="bi bi-eye"></i></button><button class="btn btn-sm btn-action-edit"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-action-del"><i class="bi bi-trash"></i></button></div></td>
+</tr><tr data-employee-row data-email="vikram@company.com">
+<td><input class="form-check-input row-check" type="checkbox"></td><td>EMP-1005</td><td><div class="d-flex align-items-center gap-2"><div class="table-avatar">VS</div><div><strong>Vikram Singh</strong><br><span class="small-muted">vikram@company.com</span></div></div></td><td>Finance Analyst</td><td>Finance</td><td>Full-time</td><td><span class="badge-status active">Active</span></td><td><div class="d-flex gap-2"><button class="btn btn-sm btn-action-view"><i class="bi bi-eye"></i></button><button class="btn btn-sm btn-action-edit"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-action-del"><i class="bi bi-trash"></i></button></div></td>
+</tr><tr data-employee-row data-email="neha@company.com">
+<td><input class="form-check-input row-check" type="checkbox"></td><td>EMP-1006</td><td><div class="d-flex align-items-center gap-2"><div class="table-avatar">NG</div><div><strong>Neha Gupta</strong><br><span class="small-muted">neha@company.com</span></div></div></td><td>HR Executive</td><td>HR</td><td>Part-time</td><td><span class="badge-status inactive">Inactive</span></td><td><div class="d-flex gap-2"><button class="btn btn-sm btn-action-view"><i class="bi bi-eye"></i></button><button class="btn btn-sm btn-action-edit"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-action-del"><i class="bi bi-trash"></i></button></div></td>
+</tr></tbody></table></div></div>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

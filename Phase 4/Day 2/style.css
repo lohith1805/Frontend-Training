@@ -1,0 +1,229 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f0f4f8;
+  color: #1a202c;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.badge {
+  background: #4f46e5;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ── Cards ── */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Form Row ── */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.btn-field {
+  justify-content: flex-end;
+  padding-top: 1.55rem;
+  flex: 0;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+input:focus { border-color: #4f46e5; }
+input.invalid { border-color: #e53e3e; }
+
+.error {
+  font-size: 0.78rem;
+  color: #e53e3e;
+  min-height: 1rem;
+}
+
+/* ── Add Button ── */
+#addBtn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#addBtn:hover { background: #4338ca; }
+#addBtn:active { transform: scale(0.97); }
+
+/* ── List Header ── */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.clear-btn {
+  background: transparent;
+  border: 1.5px solid #e53e3e;
+  color: #e53e3e;
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.clear-btn:hover { background: #e53e3e; color: #fff; }
+
+/* ── Employee Grid ── */
+.emp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.empty-msg {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ── Employee Card ── */
+.emp-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: box-shadow 0.2s;
+  animation: fadeIn 0.25s ease;
+}
+
+.emp-card:hover { box-shadow: 0 4px 12px rgba(79,70,229,0.12); }
+
+.emp-card .emp-id {
+  font-size: 0.72rem;
+  color: #a0aec0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.emp-card .emp-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.emp-card .emp-role {
+  font-size: 0.85rem;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.emp-card .emp-salary {
+  font-size: 0.9rem;
+  color: #48bb78;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.emp-card .delete-btn {
+  margin-top: 0.75rem;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: #e53e3e;
+  padding: 0.35rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.emp-card .delete-btn:hover { background: #fed7d7; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .form-row { flex-direction: column; }
+  .btn-field { padding-top: 0; flex: 1; }
+  #addBtn { width: 100%; }
+}

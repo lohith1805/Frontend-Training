@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Student registered successfully!</span>
+  </div>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">🎓</span>
+          <span class="logo-text">EduPortal</span>
+        </div>
+        <p class="header-subtitle">Student Registration System</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Registration Form Card -->
+      <section class="card form-card">
+        <div class="card-header">
+          <h2>Register Student</h2>
+          <p>Fill in the details below to register</p>
+        </div>
+
+        <form id="registrationForm" novalidate>
+
+          <!-- Full Name -->
+          <div class="form-group" id="nameGroup">
+            <label for="name">Full Name</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter full name"
+                autocomplete="off"
+              />
+            </div>
+            <span class="error-msg" id="nameError"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group" id="emailGroup">
+            <label for="email">Email Address</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉️</span>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter email address"
+                autocomplete="off"
+              />
+            </div>
+            <span class="error-msg" id="emailError"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group" id="passwordGroup">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="password"
+                placeholder="Minimum 6 characters"
+              />
+              <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">👁</button>
+            </div>
+            <div class="password-strength" id="passwordStrength">
+              <div class="strength-bar">
+                <div class="strength-fill" id="strengthFill"></div>
+              </div>
+              <span class="strength-label" id="strengthLabel"></span>
+            </div>
+            <span class="error-msg" id="passwordError"></span>
+          </div>
+
+          <!-- Mobile -->
+          <div class="form-group" id="mobileGroup">
+            <label for="mobile">Mobile Number</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📱</span>
+              <input
+                type="tel"
+                id="mobile"
+                placeholder="10-digit mobile number"
+                maxlength="10"
+              />
+            </div>
+            <span class="error-msg" id="mobileError"></span>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">Register Student</span>
+            <span class="btn-icon">→</span>
+          </button>
+
+        </form>
+      </section>
+
+      <!-- Students Table Card -->
+      <section class="card table-card">
+        <div class="card-header table-header">
+          <div>
+            <h2>Registered Students</h2>
+            <p>All data stored in Local Storage</p>
+          </div>
+          <div class="table-actions">
+            <span class="student-count" id="studentCount">0 students</span>
+            <button class="btn-clear" id="clearAllBtn">Clear All</button>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">📋</div>
+          <p>No students registered yet.</p>
+          <span>Fill out the form to get started!</span>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrapper" id="tableWrapper" style="display:none;">
+          <table class="students-table" id="studentsTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Registered</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="studentsBody">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="app-footer">
+      <p>Phase 4 · Day 3 · DOM Manipulation & Interactive Web Applications</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

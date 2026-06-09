@@ -1,0 +1,562 @@
+/* =========================================
+   EduPortal — Student Registration System
+   Phase 4 Day 3 · DOM Manipulation
+   ========================================= */
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0f1117;
+  --surface:      #1a1f2e;
+  --surface-2:    #222840;
+  --border:       #2e3550;
+  --accent:       #4f8ef7;
+  --accent-hover: #3a7aee;
+  --accent-glow:  rgba(79, 142, 247, 0.18);
+  --success:      #34d399;
+  --success-bg:   rgba(52, 211, 153, 0.12);
+  --error:        #f87171;
+  --error-bg:     rgba(248, 113, 113, 0.1);
+  --warning:      #fbbf24;
+  --text:         #e8eaf0;
+  --text-muted:   #8891a8;
+  --text-faint:   #4a5270;
+  --radius:       12px;
+  --radius-sm:    8px;
+  --shadow:       0 4px 24px rgba(0,0,0,0.4);
+  --transition:   0.2s ease;
+  --font:         'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ---- Toast ---- */
+.toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: var(--success);
+  color: #0a2e20;
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 32px rgba(52, 211, 153, 0.35);
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast-icon {
+  font-style: normal;
+  font-size: 1rem;
+  background: rgba(0,0,0,0.15);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---- Layout ---- */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Header ---- */
+.app-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 40px;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding-left: 24px;
+  border-left: 1px solid var(--border);
+}
+
+/* ---- Main ---- */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 40px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---- Cards ---- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.card-header p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ---- Form ---- */
+form {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 0.95rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: var(--font);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--text-faint);
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-group.valid input {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+}
+
+.form-group.invalid input {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px var(--error-bg);
+}
+
+/* ---- Toggle Password ---- */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  transition: color var(--transition);
+}
+
+.toggle-password:hover { color: var(--text); }
+
+/* ---- Password Strength ---- */
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* ---- Error Messages ---- */
+.error-msg {
+  font-size: 0.76rem;
+  color: var(--error);
+  min-height: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 2px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.error-msg.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Submit Button ---- */
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+
+.btn-submit:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(79,142,247,0.35);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  transition: transform var(--transition);
+}
+
+.btn-submit:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* ---- Table Card ---- */
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.student-count {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--accent-glow);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(79,142,247,0.25);
+}
+
+.btn-clear {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1.5px solid var(--error);
+  color: var(--error);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn-clear:hover {
+  background: var(--error-bg);
+}
+
+/* ---- Empty State ---- */
+.empty-state {
+  padding: 60px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.empty-state span {
+  color: var(--text-faint);
+  font-size: 0.82rem;
+}
+
+/* ---- Table ---- */
+.table-wrapper {
+  overflow-x: auto;
+  padding: 0 4px 4px;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.students-table thead {
+  background: var(--surface-2);
+}
+
+.students-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+}
+
+.students-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.students-table tbody tr {
+  transition: background var(--transition);
+}
+
+.students-table tbody tr:hover {
+  background: var(--surface-2);
+}
+
+.students-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.row-num {
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.cell-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cell-email {
+  color: var(--accent);
+  font-size: 0.83rem;
+}
+
+.cell-mobile {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.cell-date {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.btn-delete {
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-delete:hover {
+  background: var(--error-bg);
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* ---- Footer ---- */
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+/* ---- Row Enter Animation ---- */
+@keyframes rowSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.row-new {
+  animation: rowSlideIn 0.3s ease forwards;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+
+  .app-header {
+    padding: 16px 20px;
+  }
+
+  .header-subtitle {
+    display: none;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toast {
+    right: 12px;
+    left: 12px;
+    top: 12px;
+  }
+
+  form {
+    padding: 20px 18px;
+  }
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }

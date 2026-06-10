@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Directory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">&#9881;</span>
+        <span class="logo-text">UserDirectory</span>
+      </div>
+      <p class="tagline">Live data from JSONPlaceholder API</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by name, email or company..." />
+    </div>
+
+    <div id="loadingMessage" class="status-msg loading">
+      <span class="spinner"></span> Fetching users...
+    </div>
+
+    <div id="errorMessage" class="status-msg error hidden">
+      &#9888; Failed to load users. Please check your connection and try again.
+    </div>
+
+    <div id="userGrid" class="user-grid"></div>
+  </main>
+
+  <footer>
+    <p>Phase 5 · Day 1 · API Calls & Fetch API</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

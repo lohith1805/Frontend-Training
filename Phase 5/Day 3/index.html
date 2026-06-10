@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ── LOGIN PAGE ─────────────────────────────────────── -->
+  <div id="login-page" class="page">
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="logo-icon">🎓</span>
+        <h1>Student Dashboard</h1>
+        <p>Sign in to manage your students</p>
+      </div>
+      <p class="hint">Demo credentials &nbsp;→&nbsp; <strong>admin</strong> / <strong>admin123</strong></p>
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" autocomplete="current-password" required />
+        </div>
+        <p id="login-error" class="error-msg"></p>
+        <button type="submit" class="btn-primary">Sign In →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD PAGE ─────────────────────────────────── -->
+  <div id="dashboard-page" class="page">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-brand">
+        <span class="brand-icon">🎓</span>
+        Student Dashboard
+      </div>
+      <div class="topbar-actions">
+        <span class="topbar-user">Welcome, <strong id="welcome-user"></strong></span>
+        <button id="btn-theme" class="btn-secondary">🌙 Dark</button>
+        <button id="btn-logout" class="btn-danger">Logout</button>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <main class="dashboard-body">
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-icon">👥</span>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-label">Total Students</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">📊</span>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-avg">—</div>
+            <div class="stat-label">Average Grade</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">📚</span>
+          <div class="stat-info">
+            <div class="stat-value" id="stat-courses">0</div>
+            <div class="stat-label">Courses</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Students Table Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>📋 Student Records</h2>
+          <input type="search" id="search-input" class="search-input" placeholder="🔍 Search students…" />
+          <button id="btn-add-student" class="btn-accent">+ Add Student</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Grade</th>
+                <th>Enrolled</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── STUDENT MODAL ───────────────────────────────────── -->
+  <div id="student-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Add Student</h3>
+        <button id="btn-modal-close" class="btn-icon">✕</button>
+      </div>
+      <form id="student-form" novalidate>
+        <div class="form-group">
+          <label for="field-name">Full Name</label>
+          <input type="text" id="field-name" placeholder="e.g. Ravi Kumar" required />
+        </div>
+        <div class="form-group">
+          <label for="field-email">Email</label>
+          <input type="email" id="field-email" placeholder="e.g. ravi@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="field-course">Course</label>
+          <input type="text" id="field-course" placeholder="e.g. Web Development" required />
+        </div>
+        <div class="form-group">
+          <label for="field-grade">Grade (0–100)</label>
+          <input type="number" id="field-grade" min="0" max="100" placeholder="e.g. 85" required />
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btn-cancel-modal" class="btn-secondary"
+            onclick="document.getElementById('student-modal').classList.remove('open')">Cancel</button>
+          <button type="submit" class="btn-accent">Save Student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── TOAST ──────────────────────────────────────────── -->
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

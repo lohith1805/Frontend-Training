@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Frontend-Training/Phase%206/Day3/static/css/main.00969e42.css",
+    "main.js": "/Frontend-Training/Phase%206/Day3/static/js/main.f121fa11.js",
+    "index.html": "/Frontend-Training/Phase%206/Day3/index.html",
+    "main.00969e42.css.map": "/Frontend-Training/Phase%206/Day3/static/css/main.00969e42.css.map",
+    "main.f121fa11.js.map": "/Frontend-Training/Phase%206/Day3/static/js/main.f121fa11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00969e42.css",
+    "static/js/main.f121fa11.js"
+  ]
+}

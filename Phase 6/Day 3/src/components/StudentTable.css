@@ -1,0 +1,206 @@
+.student-table-wrap { min-height: 200px; }
+
+/* Horizontal scroll container for the table */
+.st-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+}
+
+/* Keep the table at its natural min-width so columns never crunch */
+.st-table {
+  min-width: 600px;
+}
+.st-search-wrap { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.st-search {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-family: var(--font);
+  font-size: 13px;
+  outline: none;
+  background: var(--bg);
+  transition: border-color 0.2s;
+}
+.st-search:focus { border-color: var(--accent); }
+
+.st-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+.st-empty p:first-child { font-size: 36px; margin-bottom: 8px; }
+.st-empty p { font-size: 14px; }
+
+.st-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+.st-table th:nth-child(1) { width: 40px; }
+.st-table th:nth-child(2) { width: 18%; }
+.st-table th:nth-child(3) { width: 22%; }
+.st-table th:nth-child(4) { width: 20%; }
+.st-table th:nth-child(5) { width: 15%; }
+.st-table th:nth-child(6) { width: 90px; }
+.st-table th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  white-space: nowrap;
+}
+.st-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+/* Fix Actions column — always wide enough for both buttons */
+.st-table th:last-child,
+.st-table td:last-child {
+  min-width: 90px;
+  width: 90px;
+}
+.st-table tr:last-child td { border-bottom: none; }
+.st-table tr:hover td { background: var(--bg); }
+
+.st-idx { color: var(--text-muted); font-family: var(--mono); font-size: 12px; }
+
+.st-name-cell { display: flex; align-items: center; gap: 10px; }
+.st-avatar {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.st-email {
+  color: var(--text-muted);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 0;        /* needed for text-overflow to work in table cells */
+}
+.st-mono { font-family: var(--mono); font-size: 12px; }
+.st-course-tag {
+  background: #f5f3ff;
+  color: var(--accent2);
+  border: 1px solid #ddd6fe;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.st-delete {
+  background: var(--danger-light);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.st-delete:hover { background: #fecaca; transform: scale(1.1); }
+
+/* Actions cell */
+.st-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Edit button */
+.st-edit {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.st-edit:hover {
+  background: #dbeafe;
+}
+.st-edit--active {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Editing row highlight */
+.st-row--editing {
+  background: #eff6ff !important;
+  outline: 2px solid #bfdbfe;
+}
+
+/* Delete confirmation overlay */
+.st-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.st-confirm-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 32px;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.st-confirm-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+.st-confirm-msg {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.st-confirm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.st-confirm-cancel {
+  padding: 9px 22px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.st-confirm-cancel:hover { background: #f1f5f9; }
+.st-confirm-delete {
+  padding: 9px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #ef4444;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.st-confirm-delete:hover { background: #dc2626; }

@@ -1,0 +1,85 @@
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sf-success {
+  background: var(--success-light);
+  border: 1px solid #a7f3d0;
+  color: var(--success);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+
+.sf-group { display: flex; flex-direction: column; gap: 6px; }
+.sf-label { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+.sf-input {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.sf-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+.sf-input--error { border-color: var(--danger) !important; }
+.sf-error { font-size: 12px; color: var(--danger); font-weight: 500; }
+
+.sf-submit {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+.sf-submit:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+.sf-hint {
+  background: #f8faff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.sf-hint code {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+/* Edit mode banner */
+.sf-edit-banner {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+/* Edit submit button variant */
+.sf-submit--edit {
+  background: #2563eb !important;
+}
+.sf-submit--edit:hover {
+  background: #1d4ed8 !important;
+}
